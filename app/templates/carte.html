@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Carte</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script type="module" src="./static/javascript/carte.js"></script>
+    <script type="module" src="./static/javascript/isomap.js"></script>
+
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <button
+      id="bouton_gares"
+      style="
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        height: 25px;
+        width: auto;
+        z-index: 9999;
+      "
+    >
+      gares
+    </button>
+    <button
+      id="bouton_gares_tgv"
+      style="
+        display: none;
+        position: absolute;
+        top: 40px;
+        right: 10px;
+        height: 25px;
+        width: auto;
+        z-index: 9999;
+      "
+    >
+      gares_tgv
+    </button>
+    <button
+      id="bouton_gares_intercites"
+      style="
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 10px;
+        height: 25px;
+        width: auto;
+        z-index: 9999;
+      "
+    >
+      gares_intercites
+    </button>
+    <button
+      id="bouton_gares_ter"
+      style="
+        display: none;
+        position: absolute;
+        top: 100px;
+        right: 10px;
+        height: 25px;
+        width: auto;
+        z-index: 9999;
+      "
+    >
+      gares_ter
+    </button>
+    <button
+      id="bouton_villes"
+      style="
+        position: absolute;
+        top: 10px;
+        right: 70px;
+        height: 25px;
+        width: auto;
+        z-index: 9999;
+      "
+    >
+      villes
+    </button>
+    <input
+      type="checkbox"
+      id="bouton_checkbox_connexion"
+      name="connexions"
+      style="
+        position: absolute;
+        top: 10px;
+        right: 120px;
+        height: 25px;
+        width: auto;
+        z-index: 9999;
+      "
+    />
+    <label
+      for="bouton_checkbox_connexion"
+      style="
+        position: absolute;
+        background-color: white;
+        border: solid black 1px;
+        top: 10px;
+        right: 140px;
+        height: 23.4px;
+        width: auto;
+        z-index: 9999;
+        user-select: none;
+      "
+      >Connexions</label
+    >
+    <button
+      id="bouton_clear"
+      style="
+        position: absolute;
+        top: 10px;
+        right: 225px;
+        height: 25px;
+        width: auto;
+        z-index: 9999;
+      "
+    >
+      X
+    </button>
+    <input
+      type="number"
+      id="bouton_number_duree"
+      name="duree"
+      value="300"
+      min="0"
+      style="
+        position: absolute;
+        bottom: 10px;
+        left: 110px;
+        height: 25px;
+        width: 40px;
+        z-index: 9999;
+      "
+    />
+    <label
+      for="bouton_number_duree"
+      style="
+        position: absolute;
+        background-color: white;
+        border: solid black 1px;
+        bottom: 10px;
+        left: 10px;
+        height: 23.4px;
+        width: auto;
+        z-index: 9999;
+        user-select: none;
+      "
+      >Durée en min</label
+    >
+
+    <!-- Affichage de la carte -->
+    <div id="map"></div>
+  </body>
+</html>
